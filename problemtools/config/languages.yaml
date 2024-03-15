@@ -261,3 +261,10 @@ scheme:
     files: '*.scm *.rkt'
     compile: '/usr/bin/csc -I {path} -o {binary} {files}'
     run: '{binary}'
+
+sml:
+    name: 'SML (MLton)'
+    priority: 548
+    files: '*.sml *.mlb'
+    compile: '/usr/bin/mlton -output {binary} {mainfile}'
+    run: '{binary}'

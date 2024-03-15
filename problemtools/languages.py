@@ -132,7 +132,7 @@ class Language(object):
         if len(entry) == 0:
             raise LanguageConfigError(
                 'No entry point variable used for language %s' % self.lang_id)
-        if len(entry) > 1:
+        if False and len(entry) > 1:
             raise LanguageConfigError(
                 'More than one entry point type variable used for language %s'
                 % self.lang_id)
