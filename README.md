@@ -126,20 +126,23 @@ kept up to date).
 ### Method 3: Run directly from the repository
 
 If you intend to help develop problemtools, or if you just want a bare-bones
-way of running them, this is your option.
+way of running them, this is your option. Note that python 3.11+ is required to
+run problemtools (mentioned here, as this method of running problemtools will
+not check python version for you).
 
 For this method, you need to clone the repository (just downloading a
 zip archive of it does not work because the project has submodules
 that are not included in that zip archive).
 
-Start by setting up your venv, e.g.,
+Set up your venv, install the requirements, and compile the various support
+programs:
 
-    python3 -m venv venv
-    venv/bin/pip install -r requirements.txt
-
-In order for the tools to work, you first have to compile the various
-support programs, which can be done by running `make` in the root
-directory of problemtools.
+```sh
+cd ~/problemtools # Assuming you checked out problemtools in your home directory
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+make
+```
 
 When this is done, you can run the three programs
 `bin/verifyproblem.sh`, `bin/problem2pdf.sh`, and
@@ -225,7 +228,7 @@ problemtools' configuration:
 
 ## Requirements and compatibility
 
-To build and run the tools, you need Python 3 with the YAML and PlasTeX libraries,
+To build and run the tools, you need Python 3.11+ with the YAML and PlasTeX libraries,
 and a LaTeX installation. You must also install language tools (e.g., compilers)
 for any languages used in problem packages.
 
