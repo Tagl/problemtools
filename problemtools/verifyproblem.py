@@ -2089,7 +2089,7 @@ class Problem(ProblemAspect):
                         )
 
     def _check_file_and_directory_names(self):
-        regex = re.compile(r'^[a-zA-Z0-9_][a-zA-Z0-9_.-]{0,254}$')
+        regex = re.compile(r'^[.a-zA-Z0-9_][a-zA-Z0-9_.-]{0,254}$')
 
         def _special_case_allowed_files(file: str, reldir: str) -> bool:
             return file == '.gitignore' or (file == '.timelimit' and reldir == os.path.basename(self.probdir))
